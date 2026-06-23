@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom</title>
-      <script src="DOM.js" defer></script>
+     
 </head>
 <body>
-    <button class="js-button">dex</button>
+   <p>Youtube subscribe button</p>
+   <br>
+   <button onclick="
+   const buttonelement=document.querySelector('.js-subscribe-button');
+   if(buttonelement.innerText=='Subscribe'){
+    buttonelement.innerText='Subscribed';
+
+   }
+   else{
+    buttonelement.innerText='Subscribe';
+   } 
+  "
+  class="js-subscribe-button">Subscribe</button>
 </body>
 </html>
