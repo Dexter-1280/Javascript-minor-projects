@@ -1,76 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-<button onclick=" "
- class="js-show-button">Show quantity</button>
-<button class="js-addToCart-button">Add to cart </button>
-<button class="js-(+2)-button" >+2</button>
-<button class="js-(+3)-button">+3</button>
-<button class="js-(+4)-button">+4</button>
-<button class="removeFromCart-button">Remove from the cart</button>
-<button>-2</button>
-<button>-3</button>
-<br>
-<p>Cart quantity</p>
 
+<head>
+  <title>Cart Quantity</title>
+</head>
 
 <body>
-    <script>
-      function convertLength(length, from, to) {
-        // I like to put invalid checks at the top since it's a bit
-        // easier to see. Also, if something is invalid, we can skip
-        // the rest of the function.
-        if (from !== 'km' && from !== 'miles' && from !== 'ft') {
-          return `Invalid unit: ${from}`;
-        } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
-          return `Invalid unit: ${to}`;
-        }
-        
-        if (from === 'km' && to === 'miles') {
-          return `${length / 1.6} ${to}`;
 
-        } else if (from === 'km' && to === 'ft') {
-          return `${length * 3281} ${to}`;
-          
-        } else if (from === 'miles' && to === 'km') {
-          return `${length * 1.6} ${to}`;
+  <button onclick="displayQuantity();">Show Quantity</button>
 
-        } else if (from === 'miles' && to === 'ft') {
-          return `${length * 5280} ${to}`;
+  <button onclick="
+        cartQuantity++;
+        displayQuantity();
+    ">Add to Cart</button>
 
-        } else if (from === 'ft' && to === 'km') {
-          return `${length / 3281} ${to}`;
+  <button onclick="
+        cartQuantity += 2;
+        displayQuantity();
+    ">+2</button>
 
-        } else if (from === 'ft' && to === 'miles') {
-          return `${length / 5280} ${to}`;
+  <button onclick="
+        cartQuantity += 3;
+        displayQuantity();
+    ">+3</button>
 
-        // You can also do if (from === 'km' && to === 'km) { ... }
-        // if (from === to) is a trick you can use to save some code.
-        } else if (from === to) {
-          return `${length} ${to}`;
-        }
-      }
+  <button onclick="
+        cartQuantity += 4;
+        displayQuantity();
+    ">+4</button>
 
-      console.log(convertLength(50, 'miles', 'km'));
-      console.log(convertLength(32, 'km', 'miles'));
-      console.log(convertLength(50, 'km', 'km'));
+  <button onclick="
+        cartQuantity += 5;
+        displayQuantity();
+    ">+5</button>
 
-      console.log(convertLength(5, 'miles', 'km'));
-      console.log(convertLength(5, 'miles', 'ft'));
-      console.log(convertLength(5, 'km', 'ft'));
+  <button onclick="
+        cartQuantity = 0;
+        displayQuantity();
+    ">Remove from cart</button>
 
-      console.log(convertLength(5, 'lbs', 'lbs'));
+  <button onclick="
+        cartQuantity -= 2;
+        displayQuantity();
+    ">-2</button>
 
+  <button onclick="
+        cartQuantity -= 3;
+        displayQuantity();
+    ">-3</button>
 
-function show(){
-const show=document.querySelector('.js-show-button');
-if(show.innerText=){
-    show.innerText=(` ${}`)
-}
-};
+  <p class="js-quantity"></p>
 
+  <script>
+    let cartQuantity = 0;
 
+    function displayQuantity() {
+      document.querySelector('.js-quantity')
+        .innerHTML = `Cart quantity: ${cartQuantity}`;
+    }
 
-    </script>
-  </body>
+    displayQuantity();
+  </script>
+
+</body>
+
 </html>
