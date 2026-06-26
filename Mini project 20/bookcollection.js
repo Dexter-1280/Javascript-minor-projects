@@ -1,4 +1,4 @@
-let book=[];
+let book=[  ];
  book = JSON.parse(localStorage.getItem('book')); //pack js object into string // to load into code
 function addBook(){
     const inputButton=document.querySelector('.bookInput');
@@ -10,6 +10,7 @@ function addBook(){
 function displaybook(){
     let html='';
     for(let i=0;i<book.length;i++){
+        
   html += `
 <div class="book-item">
     <span>${book[i]}</span>
