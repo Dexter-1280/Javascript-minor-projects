@@ -9,7 +9,8 @@
 
   <button onclick="displayQuantity();">Show Quantity</button>
 
-  <button onclick="
+  <button class="addbutton" onclick="
+  addbutton();
         cartQuantity++;
         displayQuantity();
     ">Add to Cart</button>
@@ -60,6 +61,20 @@
     }
 
     displayQuantity();
+
+    function addbutton(){
+let add=document.querySelector('.addbutton');
+if(add.innerText='Add to cart'){
+  add.innerText='Added to cart';
+}
+else{
+  add.innerText='Add to cart'
+}
+    
+   setTimeout(() => {
+    add.innerText="Add to cart";
+  }, 3000);
+  };
   </script>
 
 </body>
