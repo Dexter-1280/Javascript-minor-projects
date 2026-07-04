@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishlist & Orders Demo</title>
+</head>
+<body>
+  <h1>My Wishlist</h1>
+  <div id="wishlist"></div>
+  <button onclick="addToWishlist('Smartwatch', 1)">Add Smartwatch</button>
+  <button onclick="removeFromWishlist(2)">Remove Item #2</button>
+
+  <h1>My Orders</h1>
+  <div id="orders"></div>
+  <button onclick="placeOrder('Smartwatch')">Place Smartwatch Order</button>
+  <button onclick="updateOrderStatus(103, 'Shipped')">Update Order #103</button>
+
+  <h1>Track Order</h1>
+  <input type="number" id="trackId" placeholder="Enter Order ID">
+  <button onclick="trackOrder(parseInt(document.getElementById('trackId').value))">
+    Track
+  </button>
+
+  <script src="ex.js"></script>
+
+</body>
+</html>
