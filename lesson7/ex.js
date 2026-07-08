@@ -1,4 +1,4 @@
-// wishlist.js
+
 let wishlist = [
   { id: 1, name: "Wireless Mouse", qty: 2 },
   { id: 2, name: "Bluetooth Headphones", qty: 1 },
@@ -49,7 +49,7 @@ function displayOrders() {
   });
 }
 
-// tracking.js
+
 function trackOrder(id) {
   const order = orders.find(o => o.id === id);
   if (!order) {
@@ -59,7 +59,7 @@ function trackOrder(id) {
   console.log(`Tracking Order #${id}: ${order.product} is currently ${order.status}.`);
 }
 
-// main.js
+
 console.log("=== Wishlist Demo ===");
 displayWishlist();
 addToWishlist("Smartwatch", 1);
