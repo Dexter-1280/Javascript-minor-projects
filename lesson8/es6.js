@@ -7,6 +7,10 @@ semester++;
 console.log(college);
 console.log(semester);
 
+
+
+
+
 // Template Literals
 const name = "Aditya";
 
